@@ -1,0 +1,1 @@
+add_library(spng spng_main.c miniz.c spng.c)

@@ -1,0 +1,2 @@
+/usr/local/arm/5.4.0/usr/bin/arm-linux-ar qc libSObj.a CMakeFiles/SObj.dir/screenObj.cpp.o
+/usr/local/arm/5.4.0/usr/bin/arm-linux-ranlib libSObj.a
