@@ -53,7 +53,7 @@ private:
     lcdC::font* m_font;
 
 public:
-    LcdDevice (const char* path);
+    explicit LcdDevice (const char* path);
     ~LcdDevice ();
 
     lcdC::font* getFont () {return m_font;}

@@ -23,7 +23,7 @@ protected:
     size_t m_w{};
 
 public:
-    screenObj (LcdDevice* lcd,size_t x=0,size_t y=0)
+    explicit screenObj (LcdDevice* lcd,size_t x=0,size_t y=0)
         :m_lcd(lcd),m_x{x},m_y{y} {}
 
     screenObj (screenObj* father,size_t x=0,size_t y=0)

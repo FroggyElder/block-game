@@ -39,7 +39,7 @@ private:
     tscreen_status status;
 
 public:
-    Tscreen(const char* path);
+    explicit Tscreen(const char* path);
     ~Tscreen();
 
     tscreen_status& getStatus() 
