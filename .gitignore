@@ -1,5 +1,8 @@
-# Ignore the build directory
-build/
+# Ignore everything in the build directory
+build/*
+
+# Except this file
+!build/.gitkeep
 
 # Ignore the .vscode directory
 .vscode/
