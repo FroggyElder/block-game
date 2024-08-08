@@ -1,1 +1,0 @@
-/usr/local/arm/5.4.0/usr/bin/arm-linux-g++ -std=c++17 CMakeFiles/demo.dir/main.cpp.o -o demo  lib/lcd/liblcd.a lib/touch_screen/libtouch_screen.a src/screenObj/libSObj.a src/block/libblock.a src/menu/libmenu.a -lm src/screenObj/libSObj.a lib/lcd/liblcd.a lib/lcd/spng/libspng.a lib/lcd/font/libfont.a -lpthread 
