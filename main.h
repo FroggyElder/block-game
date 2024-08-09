@@ -43,6 +43,6 @@ void fullexit (void* pauseMenu);
 void mutexUnlock (void* mutex);
 
 //reset board
-void boardRestart (void* board)
+void boardRestart (void* board);
 
 #endif
