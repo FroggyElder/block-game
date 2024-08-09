@@ -76,6 +76,8 @@ int main ()
     std::string scoreStr{std::to_string(board.getScore())};
     scoreShow.setSrc(scoreStr.c_str(),100,scoreStr.length());
 
+    board::ScoreObserver{&scoreShow,&board};
+
     std::thread t1{fallThread,&board};
     while (1) 
     {
@@ -95,8 +97,8 @@ int main ()
                 break;
             case Tscreen::Action::tap:
                 fallMutex.lock();
-                scoreStr = std::to_string(board.getScore());
-                scoreShow.setSrc(scoreStr.c_str(),100,scoreStr.length());
+                // scoreStr = std::to_string(board.getScore());
+                // scoreShow.setSrc(scoreStr.c_str(),100,scoreStr.length());
                 pauseMenu.paint();
                 lcd.refresh();
                 while (!pauseMenu.waitForClick());

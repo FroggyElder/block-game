@@ -11,6 +11,7 @@
 
 #include "screenObj.h"
 #include "lcd.h"
+#include "observer.h"
 
 namespace board
 {
@@ -30,7 +31,7 @@ enum class objType
 objType getRandomType();
 class fallingObj;
 
-class BlockBoard: public screenObj
+class BlockBoard: public screenObj,public obs::Subject
 {
 private:
     //lock
@@ -105,6 +106,23 @@ public:
     void moveRight();
 };
 
-}
+class ScoreObserver : public obs::Observer {
+private:
+    screenObj* scoreDisplay;
+    board::BlockBoard* board;
 
+public:
+    ScoreObserver(screenObj* display, board::BlockBoard* b) 
+        : scoreDisplay(display), board(b) 
+        {
+            board->addObserver(this);
+        }
+
+    void update() override {
+        std::string scoreStr = std::to_string(board->getScore());
+        scoreDisplay->setSrc(scoreStr.c_str(), 100, scoreStr.length());
+    }
+};
+
+}
 #endif

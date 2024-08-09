@@ -15,6 +15,7 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/src/screenObj)
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/block)
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/menu)
 
+
 include_directories(${PROJECT_SOURCE_DIR}/lib/lcd)
 include_directories(${PROJECT_SOURCE_DIR}/lib/lcd/spng)
 include_directories(${PROJECT_SOURCE_DIR}/lib/lcd/font)
@@ -24,6 +25,7 @@ include_directories(${PROJECT_SOURCE_DIR}/lib/touch_screen)
 include_directories(${PROJECT_SOURCE_DIR}/src/screenObj)
 include_directories(${PROJECT_SOURCE_DIR}/src/block)
 include_directories(${PROJECT_SOURCE_DIR}/src/menu)
+include_directories(${PROJECT_SOURCE_DIR}/src/observer)
 
 
 add_executable(${Obj} main.cpp)
