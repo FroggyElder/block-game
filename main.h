@@ -15,7 +15,6 @@
 #include "block.h"
 #include "menu.h"
 
-
 namespace dev
 {
     ///path to ur lcd device

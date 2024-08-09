@@ -2,6 +2,8 @@
 
 void screenObj::setSrc (const char* pngPath)
 {
+    mapcCleanup();
+
     lcdC::read_png_to_argb(pngPath,&m_bitmap,&m_w,&m_h);
 
     for (int i=0;i<(m_w*m_h);i++)
@@ -14,6 +16,8 @@ void screenObj::setSrc (const char* pngPath)
 
 void screenObj::setSrc (const char* text,size_t size,size_t len)
 {
+    mapcCleanup();
+
     m_w = size*len;
     m_h = size;
 

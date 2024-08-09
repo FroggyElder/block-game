@@ -13,9 +13,13 @@ screenObj* Menu::waitForClick ()
     for (auto child : m_childs) {
         if (child->isIn(inputX, inputY)) {
             auto it = m_callbacks.find(child);
-            if (it != m_callbacks.end()) {
-                auto& callback = it->second.first;
-                auto& param = it->second.second;
+            if (it == m_callbacks.end()) 
+            {
+                break;
+            }
+            auto& callback = it->second.first;
+            auto& param = it->second.second;
+            if(callback) {
                 callback(param);
             }
             return child;

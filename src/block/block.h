@@ -41,10 +41,14 @@ private:
     fallingObj* m_obj{};
     //next object
     fallingObj* m_nextObj{};
+    //current score
+    int m_score{};
 
 public:
     BlockBoard(LcdDevice* lcd);
     ~BlockBoard();
+
+    int getScore () {return m_score;}
 
     std::mutex& getLock() {return m_lcdLock;}
 

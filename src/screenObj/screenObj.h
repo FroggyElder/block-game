@@ -36,8 +36,7 @@ public:
 
     virtual ~screenObj ()
     {
-        if(m_map) lcdC::destroyBitmap(m_map);
-        else free(m_bitmap);
+        mapcCleanup();
         m_childs.clear();
         if (m_father) m_father->paint();
     }
@@ -46,6 +45,12 @@ public:
     size_t getY () {return m_y;}
 
     virtual bool isIn (size_t x,size_t y);
+
+    void mapcCleanup ()
+    {
+        if(m_map) lcdC::destroyBitmap(m_map);
+        else if (m_bitmap) free(m_bitmap);
+    }
 
     void setSrc (const char* pngPath);
 

@@ -72,6 +72,9 @@ int main ()
     restartBtn.setSrc("assets/restart.png");
     pauseMenu.registerCallback(&restartBtn,boardRestart,&board);
 
+    screenObj scoreShow{&pauseMenu,300,300};
+    std::string scoreStr{std::to_string(board.getScore())};
+    scoreShow.setSrc(scoreStr.c_str(),100,scoreStr.length());
 
     std::thread t1{fallThread,&board};
     while (1) 
@@ -92,9 +95,11 @@ int main ()
                 break;
             case Tscreen::Action::tap:
                 fallMutex.lock();
+                scoreStr = std::to_string(board.getScore());
+                scoreShow.setSrc(scoreStr.c_str(),100,scoreStr.length());
                 pauseMenu.paint();
                 lcd.refresh();
-                pauseMenu.waitForClick();
+                while (!pauseMenu.waitForClick());
                 break;
             default:
                 break;

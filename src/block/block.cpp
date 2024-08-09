@@ -349,6 +349,7 @@ void BlockBoard::checkAndDeleteFullLines()
     {
         if (isLineFull(y))
         {
+            m_score++;
             deleteLine(y);
         }
     }
