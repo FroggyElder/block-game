@@ -114,9 +114,14 @@ private:
 public:
     ScoreObserver(screenObj* display, board::BlockBoard* b) 
         : scoreDisplay(display), board(b) 
-        {
-            board->addObserver(this);
-        }
+    {
+        board->addObserver(this);
+    }
+
+    ~ScoreObserver()
+    {
+        board->removeObserver(this);
+    }
 
     void update() override {
         std::string scoreStr = std::to_string(board->getScore());
